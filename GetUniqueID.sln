@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetUniqueID", "GetUniqueID\GetUniqueID.csproj", "{B61B8BEA-42EF-4B9D-A7D4-82968C78B3DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComparisonUniqueID", "ComparisonUniqueID\ComparisonUniqueID.csproj", "{EEEDB2B2-41E0-4328-8BAF-F74C44EC73BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B61B8BEA-42EF-4B9D-A7D4-82968C78B3DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B61B8BEA-42EF-4B9D-A7D4-82968C78B3DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B61B8BEA-42EF-4B9D-A7D4-82968C78B3DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEEDB2B2-41E0-4328-8BAF-F74C44EC73BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEEDB2B2-41E0-4328-8BAF-F74C44EC73BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEEDB2B2-41E0-4328-8BAF-F74C44EC73BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEEDB2B2-41E0-4328-8BAF-F74C44EC73BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

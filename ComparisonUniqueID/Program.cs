@@ -1,10 +1,9 @@
 ﻿using System;
-using System.IO;
 using System.Management;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace GetUniqueID
+namespace ComparisonUniqueID
 {
     class Program
     {
@@ -15,9 +14,26 @@ namespace GetUniqueID
             Console.WriteLine(hash);
 
             string filePath = @"c:\aky.hsuid";
-            StreamWriter sw = new StreamWriter(filePath);
-            sw.Write(hash);
-            sw.Close();
+
+            if(System.IO.File.Exists(filePath))
+            {
+                System.IO.StreamReader sr = new System.IO.StreamReader(filePath);
+                string s = sr.ReadToEnd();
+                sr.Close();
+
+                if (hash == s)
+                {
+                    Console.WriteLine("match");
+                }
+                else
+                {
+                    Console.WriteLine("mismatch");
+                }
+            }
+            else
+            {
+                Console.WriteLine("File does not exist");
+            }
         }
 
         /// <summary>
