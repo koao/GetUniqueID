@@ -9,8 +9,10 @@ namespace ComparisonUniqueID
     {
         static void Main(string[] args)
         {
-            string pass = "hoge";
-            string hash = GetMD5HashString(pass + GetVolumeSerials());
+            const string drive = "C:";
+            const string pass = "hoge";
+
+            string hash = GetMD5HashString(pass + GetSerialNumber(drive));
             Console.WriteLine(hash);
 
             string filePath = @"c:\aky.hsuid";
@@ -37,19 +39,41 @@ namespace ComparisonUniqueID
         }
 
         /// <summary>
-        /// ストレージのシリアルナンバーを取得する。複数ある場合は連結して返す。
+        /// ドライブのシリアルナンバーを取得する
         /// </summary>
-        /// <returns>シリアルナンバー</returns>
-        public static string GetVolumeSerials()
+        /// <param name="driveLetter"></param>
+        /// <returns></returns>
+        public static string GetSerialNumber(string driveLetter)
         {
-            var volumes = new ManagementClass("Win32_DiskDrive").GetInstances();
+            if (driveLetter.Length != 2)
+                return "";
 
-            string str = "";
-            foreach (var volume in volumes)
+            try
             {
-                str += volume["SerialNumber"].ToString();
+                using (var partitions = new ManagementObjectSearcher("ASSOCIATORS OF {Win32_LogicalDisk.DeviceID='" + driveLetter +
+                                                 "'} WHERE ResultClass=Win32_DiskPartition"))
+                {
+                    foreach (var partition in partitions.Get())
+                    {
+                        using (var drives = new ManagementObjectSearcher("ASSOCIATORS OF {Win32_DiskPartition.DeviceID='" +
+                                                             partition["DeviceID"] +
+                                                             "'} WHERE ResultClass=Win32_DiskDrive"))
+                        {
+                            foreach (var drive in drives.Get())
+                            {
+                                return (string)drive["SerialNumber"];
+                            }
+                        }
+                    }
+                }
             }
-            return str;
+            catch
+            {
+                return "<unknown>";
+            }
+
+            // Not Found
+            return "<unknown>";
         }
 
         /// <summary>

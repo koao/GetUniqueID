@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetUniqueID", "GetUniqueID\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComparisonUniqueID", "ComparisonUniqueID\ComparisonUniqueID.csproj", "{EEEDB2B2-41E0-4328-8BAF-F74C44EC73BB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{0775A744-5CF9-43CD-A43F-E6F075A19A97}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{EEEDB2B2-41E0-4328-8BAF-F74C44EC73BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEEDB2B2-41E0-4328-8BAF-F74C44EC73BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEEDB2B2-41E0-4328-8BAF-F74C44EC73BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0775A744-5CF9-43CD-A43F-E6F075A19A97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0775A744-5CF9-43CD-A43F-E6F075A19A97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0775A744-5CF9-43CD-A43F-E6F075A19A97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0775A744-5CF9-43CD-A43F-E6F075A19A97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
